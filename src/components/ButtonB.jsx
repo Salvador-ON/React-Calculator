@@ -15,7 +15,7 @@ ButtonB.propTypes = {
   color: PropTypes.string,
 };
 
-const defaultProps = {
+ButtonB.defaultProps = {
   color:'',
 }
 
