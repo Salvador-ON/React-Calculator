@@ -12,7 +12,11 @@ const ButtonB = ({ name, wide, color }) => (
 ButtonB.propTypes = {
   name: PropTypes.string.isRequired,
   wide: PropTypes.bool.isRequired,
-  color: PropTypes.bool
+  color: PropTypes.string,
 };
+
+const defaultProps = {
+  color:'',
+}
 
 export default ButtonB;
