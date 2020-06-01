@@ -1,0 +1,25 @@
+.Frame {
+  width: 700px;
+  min-height: 400px;
+  margin: 0 auto;
+  background-color: blue;
+}
+
+.DisplayScreen{
+  width: 100%;
+  height: 100px;
+  background-color: green;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.Result{
+  background-color: red;
+  padding: 0;
+  margin: 0;
+}
+
+.Group{
+  display: flex;
+}
