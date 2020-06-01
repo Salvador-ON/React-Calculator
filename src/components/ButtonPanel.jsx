@@ -1,11 +1,11 @@
-import React from "react";
-import ButtonB from "./ButtonB";
+import React from 'react';
+import ButtonB from './ButtonB';
 
 const ButtonPanel = () => {
   return (
     <React.Fragment>
       <div className="Group">
-        <ButtonB name={"AC"} wide={"25%"}/>
+        <ButtonB name='AC' wide={"25%"}/>
         <ButtonB name={"+/-"} wide={"25%"}/>
         <ButtonB name={"%"} wide={"25%"}/>
         <ButtonB name={"÷"} wide={"25%"}/>
