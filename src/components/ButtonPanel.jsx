@@ -28,9 +28,9 @@ const ButtonPanel = () => (
       <ButtonB name="+" wide={false} />
     </div>
     <div className="Group1">
-      <ButtonB name="0" wide={true} color="grey" />
+      <ButtonB name="0" wide color="grey" />
       <ButtonB name="." wide={false} color="grey" />
-      <ButtonB name="=" wide={false}/>
+      <ButtonB name="=" wide={false} />
     </div>
   </React.Fragment>
 );
