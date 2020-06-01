@@ -16,7 +16,7 @@ ButtonB.propTypes = {
 };
 
 ButtonB.defaultProps = {
-  color:'',
-}
+  color: '',
+};
 
 export default ButtonB;
