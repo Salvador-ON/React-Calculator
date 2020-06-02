@@ -3,36 +3,34 @@ import Display from "./Display";
 import ButtonPanel from "./ButtonPanel";
 import calculate from "../logic/calculate";
 
-const test = {
-  total: "",
-  currentValue: "",
-  operation: "",
-};
-
 function App() {
   const [data, SetData] = React.useState({
-    total: "",
-    currentValue: "",
-    operation: "",
+    total: '',
+    currentValue: '',
+    operation: '',
   });
 
-  const getValue = (e) =>{
-    SetCV(e.target.value);
-  }
+  const getValue = (e) => {
+    LogicOp(e.target.value);
+  };
 
   const SetCV = (value) => {
+    const { total, currentValue, operation } = value;
     SetData({
+      total,
+      currentValue,
+      operation,
+    });
+  };
 
-    ...data,
-    currentValue: data.currentValue + value
-  });
-      
-
-  }
+  const LogicOp = (value) => {
+    const dataObject = calculate(data, value);
+    SetCV(dataObject);
+  };
 
   return (
     <div className="Frame">
-      <Display />
+      <Display result={data.currentValue || (data.total==='' ? '0' : '') || (data.currentValue==='' && data.operation === '' ? data.total : '') || (data.currentValue==='' && data.operation !== '' ? data.operation : '')}/>
       <ButtonPanel getValue={getValue} />
     </div>
   );

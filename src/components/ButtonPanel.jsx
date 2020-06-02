@@ -14,7 +14,7 @@ const ButtonPanel = ({getValue}) => {
       <ButtonB getValue={getValue} name="7" wide={false} color="grey" />
       <ButtonB getValue={getValue} name="8" wide={false} color="grey" />
       <ButtonB getValue={getValue} name="9" wide={false} color="grey" />
-      <ButtonB getValue={getValue} name="X" wide={false} />
+      <ButtonB getValue={getValue} name="x" wide={false} />
     </div>
     <div className="Group">
       <ButtonB getValue={getValue} name="4" wide={false} color="grey" />
