@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ButtonB = ({ 
-  name, 
-  wide, 
-  color, 
-  getValue 
+  name,
+  wide,
+  color,
+  getValue,
 }) => (
   <React.Fragment>
     <button
