@@ -28,7 +28,7 @@ const operate = (ValueOne, ValueTwo, opt) => {
 
   if (opt === '%') {
     // if (!ValueTwo) {
-      result = Big(ValueOne).div(100);
+    result = Big(ValueOne).div(100);
     // } else {
     //   result = Big(ValueTwo).times(ValueOne).div(100);
     // }

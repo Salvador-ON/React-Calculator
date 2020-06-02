@@ -8,17 +8,14 @@ const calculate = (dataObject, buttonName) => {
   const ops = ['+', '-', 'x', '÷', '%'];
 
   if (buttonName === '.' && !currentValue.includes('.')) {
-    currentValue = currentValue + buttonName;
-    console.log(currentValue, 'current updated');
+    currentValue += buttonName;
   }
 
   if (nums.includes(buttonName)) {
-    currentValue = currentValue + buttonName;
-    console.log(currentValue, 'current updated');
+    currentValue += buttonName;
   }
 
   if (buttonName === 'AC') {
-    console.log('ac');
     total = '';
     currentValue = '';
     operation = '';
@@ -30,18 +27,15 @@ const calculate = (dataObject, buttonName) => {
       currentValue = total;
       operation = '';
     }
-    console.log('=');
   }
 
   if (buttonName === '+/-') {
-    total = (currentValue*-1).toString();
+    total = (currentValue * -1).toString();
     currentValue = '';
     operation = '';
   }
 
   if (ops.includes(buttonName)) {
-   
-
     if (buttonName === '%' && currentValue !== '') {
       if (total === '0' || operation === '') {
         total = currentValue;
@@ -54,11 +48,11 @@ const calculate = (dataObject, buttonName) => {
     }
 
     if (
-      (buttonName === '-' ||
-        buttonName === '+' ||
-        buttonName === 'x' ||
-        buttonName === '÷') &&
-      currentValue !== ''
+      (buttonName === '-'
+        || buttonName === '+'
+        || buttonName === 'x'
+        || buttonName === '÷')
+      && currentValue !== ''
     ) {
       if (total === '0' || operation === '') {
         total = currentValue;
@@ -67,7 +61,6 @@ const calculate = (dataObject, buttonName) => {
       }
 
       currentValue = '';
-      console.log('-');
     }
 
     operation = buttonName;
@@ -76,10 +69,8 @@ const calculate = (dataObject, buttonName) => {
   const resObj = {
     total: total.toString(),
     currentValue: currentValue.toString(),
-    operation: operation,
+    operation,
   };
-
-  console.log(resObj, 'resss');
 
   return resObj;
 };
