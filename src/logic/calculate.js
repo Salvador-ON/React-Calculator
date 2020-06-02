@@ -5,7 +5,7 @@ const calculate = (dataObject, buttonName) => {
 
   total = total || '0';
   const nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  const ops = ['+', '-', 'x', '÷', '%'];
+  const ops = ['+', '-', 'x', '÷'];
 
   if (buttonName === '.' && !currentValue.includes('.')) {
     currentValue += buttonName;
@@ -35,18 +35,13 @@ const calculate = (dataObject, buttonName) => {
     operation = '';
   }
 
+  if (buttonName === '%' && currentValue !== '') {
+    total = (currentValue/100).toString();
+    currentValue = '';
+    operation = '';
+  }
+
   if (ops.includes(buttonName)) {
-    if (buttonName === '%' && currentValue !== '') {
-      if (total === '0' || operation === '') {
-        total = currentValue;
-      } else {
-        total = operate(total, currentValue, buttonName).toString();
-      }
-
-      currentValue = '';
-      operation = '';
-    }
-
     if (
       (buttonName === '-'
         || buttonName === '+'
