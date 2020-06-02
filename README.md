@@ -1,5 +1,5 @@
 
-# React Calulatort
+# React Calculatort
 
 - Microverse React project:
 
