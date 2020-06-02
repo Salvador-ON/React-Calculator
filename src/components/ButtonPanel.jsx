@@ -36,4 +36,8 @@ const ButtonPanel = ({getValue}) => {
   </React.Fragment>
 )};
 
+ButtonPanel.propTypes = {
+  getValue: PropTypes.func.isRequired,
+};
+
 export default ButtonPanel;
