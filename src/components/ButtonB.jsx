@@ -7,7 +7,7 @@ const ButtonB = ({ name, wide, color, getValue }) => (
       onClick={getValue}
       type='button'
       value={name}
-      className={color || 'orange'}
+      className={color || "orange"}
       style={{ width: wide ? '50%' : '25%', height: '100px' }}
     >
       {name}
