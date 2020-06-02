@@ -36,9 +36,7 @@ const calculate = (dataObject, buttonName) => {
   }
 
   if (buttonName === '%' && currentValue !== '') {
-    total = (currentValue / 100).toString();
-    currentValue = '';
-    operation = '';
+    currentValue = (currentValue / 100).toString();
   }
 
   if (ops.includes(buttonName)) {
