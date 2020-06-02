@@ -2,7 +2,7 @@ import React from 'react';
 import ButtonB from './ButtonB';
 
 const ButtonPanel = ({getValue}) => {
-  return(
+  return (
   <React.Fragment>
     <div className="Group">
       <ButtonB getValue={getValue} name="AC" wide={false} color="grey" />
