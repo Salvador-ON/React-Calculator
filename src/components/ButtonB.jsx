@@ -1,14 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const ButtonB = ({ name, wide, color, getValue }) => (
   <React.Fragment>
     <button
       onClick={getValue}
-      type="button"
+      type='button'
       value={name}
-      className={color || "orange"}
-      style={{ width: wide ? "50%" : "25%", height: "100px" }}
+      className={color || 'orange'}
+      style={{ width: wide ? '50%' : '25%', height: '100px' }}
     >
       {name}
     </button>
@@ -23,7 +23,7 @@ ButtonB.propTypes = {
 };
 
 ButtonB.defaultProps = {
-  color: "",
+  color: '',
 };
 
 export default ButtonB;
