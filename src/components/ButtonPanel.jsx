@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import ButtonB from "./ButtonB";
+import React from 'react';
+import PropTypes from 'prop-types';
+import ButtonB from './ButtonB';
 
 const ButtonPanel = ({ getValue }) => {
   return (
