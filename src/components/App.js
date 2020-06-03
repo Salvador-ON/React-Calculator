@@ -6,15 +6,15 @@ import calculate from '../logic/calculate';
 function App() {
   const [data, SetData] = React.useState({
     total: '',
-    currentValue: '',
+    next: '',
     operation: '',
   });
 
   const SetCV = value => {
-    const { total, currentValue, operation } = value;
+    const { total, next, operation } = value;
     SetData({
       total,
-      currentValue,
+      next,
       operation,
     });
   };
@@ -30,7 +30,14 @@ function App() {
 
   return (
     <div className="Frame">
-      <Display result={data.currentValue || (data.total === '' ? '0' : '') || (data.currentValue === '' && data.operation === '' ? data.total : '') || (data.currentValue === '' && data.operation !== '' ? data.operation : '')} />
+      <Display
+        result={
+          data.next
+          || (data.total === '' ? '0' : '')
+          || (data.next === '' && data.operation === '' ? data.total : '')
+          || (data.next === '' && data.operation !== '' ? data.operation : '')
+        }
+      />
       <ButtonPanel getValue={getValue} />
     </div>
   );

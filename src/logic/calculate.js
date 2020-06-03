@@ -1,52 +1,52 @@
 import operate from './operate';
 
 const calculate = (dataObject, buttonName) => {
-  let { total, currentValue, operation } = dataObject;
+  let { total, next, operation } = dataObject;
 
   total = total || '0';
   const nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
   const ops = ['+', '-', 'x', '÷'];
 
-  if (buttonName === '.' && !currentValue.includes('.')) {
-    currentValue += buttonName;
+  if (buttonName === '.' && !next.includes('.')) {
+    next += buttonName;
   }
 
   if (nums.includes(buttonName)) {
-    currentValue += buttonName;
+    next += buttonName;
   }
 
   if (buttonName === 'AC') {
     total = '';
-    currentValue = '';
+    next = '';
     operation = '';
   }
 
   if (buttonName === '=') {
     if (operation !== '') {
-      total = operate(total, currentValue || '0', operation).toString();
-      currentValue = total;
+      total = operate(total, next || '0', operation).toString();
+      next = total;
       operation = '';
     }
   }
 
   if (buttonName === '+/-') {
-    currentValue = operate(total, currentValue, buttonName).toString();;
+    next = operate(total, next, buttonName).toString();
     operation = '';
   }
 
-  if (buttonName === '%' && currentValue !== '') {
-    currentValue = operate(total, currentValue, buttonName).toString();
+  if (buttonName === '%' && next !== '') {
+    next = operate(total, next, buttonName).toString();
   }
 
   if (ops.includes(buttonName)) {
-    if (currentValue !== '') {
+    if (next !== '') {
       if (total === '0' || operation === '') {
-        total = currentValue;
+        total = next;
       } else {
-        total = operate(total, currentValue, buttonName).toString();
+        total = operate(total, next, buttonName).toString();
       }
 
-      currentValue = '';
+      next = '';
     }
 
     operation = buttonName;
@@ -54,7 +54,7 @@ const calculate = (dataObject, buttonName) => {
 
   const resObj = {
     total: total.toString(),
-    currentValue: currentValue.toString(),
+    next: next.toString(),
     operation,
   };
 

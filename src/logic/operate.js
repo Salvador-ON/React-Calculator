@@ -7,7 +7,7 @@ const operate = (ValueOne, ValueTwo, opt) => {
   }
 
   if (opt === '+/-') {
-    result = Big(ValueTwo)*(-1);
+    result = Big(ValueTwo) * (-1);
   }
 
   if (opt === '-') {
@@ -27,7 +27,6 @@ const operate = (ValueOne, ValueTwo, opt) => {
   }
 
   if (opt === '%') {
-   
     result = Big(ValueTwo).div(Big(100));
   }
 
