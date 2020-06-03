@@ -1,16 +1,16 @@
-import React from "react";
-import Display from "./Display";
-import ButtonPanel from "./ButtonPanel";
-import calculate from "../logic/calculate";
+import React from 'react';
+import Display from './Display';
+import ButtonPanel from './ButtonPanel';
+import calculate from '../logic/calculate';
 
 function App() {
   const [data, SetData] = React.useState({
-    total: "",
-    next: "",
-    operation: "",
+    total: '',
+    next: '',
+    operation: '',
   });
 
-  const SetCV = (value) => {
+  const SetCV = value => {
     const { total, next, operation } = value;
     SetData({
       total,
@@ -19,12 +19,12 @@ function App() {
     });
   };
 
-  const LogicOp = (value) => {
+  const LogicOp = value => {
     const dataObject = calculate(data, value);
     SetCV(dataObject);
   };
 
-  const getValue = (e) => {
+  const getValue = e => {
     LogicOp(e.target.value);
   };
 
@@ -32,10 +32,10 @@ function App() {
     <div className="Frame">
       <Display
         result={
-          data.next ||
-          (data.total === "" ? "0" : "") ||
-          (data.next === "" && data.operation === "" ? data.total : "") ||
-          (data.next === "" && data.operation !== "" ? data.operation : "")
+          data.next
+          || (data.total === '' ? '0' : '')
+          || (data.next === '' && data.operation === '' ? data.total : '')
+          || (data.next === '' && data.operation !== '' ? data.operation : '')
         }
       />
       <ButtonPanel getValue={getValue} />
