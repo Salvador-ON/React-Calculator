@@ -11,7 +11,7 @@ const calculate = (dataObject, buttonName) => {
     next += buttonName;
   }
 
-  if (nums.includes(buttonName) && next !== 'Zero division error' ) {
+  if (nums.includes(buttonName) && next !== 'Zero division error') {
     next += buttonName;
   }
 
@@ -21,7 +21,7 @@ const calculate = (dataObject, buttonName) => {
     operation = '';
   }
 
-  if (buttonName === '=' &&  next !== 'Zero division error') {
+  if (buttonName === '=' && next !== 'Zero division error') {
     if (operation !== '') {
       total = operate(total, next || '0', operation).toString();
       next = total;
@@ -29,17 +29,17 @@ const calculate = (dataObject, buttonName) => {
     }
   }
 
-  if (buttonName === '+/-' &&  next !== 'Zero division error') {
+  if (buttonName === '+/-' && next !== 'Zero division error') {
     next = operate(total, next, buttonName).toString();
     operation = '';
   }
 
-  if (buttonName === '%' && next !== '' &&  next !== 'Zero division error') {
+  if (buttonName === '%' && next !== '' && next !== 'Zero division error') {
     next = operate(total, next, buttonName).toString();
   }
 
   if (ops.includes(buttonName)) {
-    if (next !== '' &&  next !== 'Zero division error') {
+    if (next !== '' && next !== 'Zero division error') {
       if (total === '0' || operation === '') {
         total = next;
       } else {
