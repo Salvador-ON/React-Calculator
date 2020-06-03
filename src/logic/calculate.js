@@ -30,23 +30,16 @@ const calculate = (dataObject, buttonName) => {
   }
 
   if (buttonName === '+/-') {
-    total = (currentValue * -1).toString();
-    currentValue = '';
+    currentValue = operate(total, currentValue, buttonName).toString();;
     operation = '';
   }
 
   if (buttonName === '%' && currentValue !== '') {
-    currentValue = (currentValue / 100).toString();
+    currentValue = operate(total, currentValue, buttonName).toString();
   }
 
   if (ops.includes(buttonName)) {
-    if (
-      (buttonName === '-'
-        || buttonName === '+'
-        || buttonName === 'x'
-        || buttonName === '÷')
-      && currentValue !== ''
-    ) {
+    if (currentValue !== '') {
       if (total === '0' || operation === '') {
         total = currentValue;
       } else {

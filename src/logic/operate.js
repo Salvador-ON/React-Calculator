@@ -3,19 +3,19 @@ const Big = require('big.js');
 const operate = (ValueOne, ValueTwo, opt) => {
   let result;
   if (opt === '+') {
-    result = Big(ValueOne).plus(ValueTwo);
+    result = Big(ValueOne).plus(Big(ValueTwo));
   }
 
   if (opt === '+/-') {
-    result = Big(ValueOne).plus(-1);
+    result = Big(ValueTwo)*(-1);
   }
 
   if (opt === '-') {
-    result = Big(ValueOne).minus(ValueTwo);
+    result = Big(ValueOne).minus(Big(ValueTwo));
   }
 
   if (opt === 'x') {
-    result = Big(ValueOne).times(ValueTwo);
+    result = Big(ValueOne).times(Big(ValueTwo));
   }
 
   if (opt === '÷') {
@@ -27,11 +27,8 @@ const operate = (ValueOne, ValueTwo, opt) => {
   }
 
   if (opt === '%') {
-    // if (!ValueTwo) {
-    result = Big(ValueOne).div(100);
-    // } else {
-    //   result = Big(ValueTwo).times(ValueOne).div(100);
-    // }
+   
+    result = Big(ValueTwo).div(Big(100));
   }
 
   return result;
