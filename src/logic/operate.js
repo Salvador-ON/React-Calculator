@@ -22,7 +22,7 @@ const operate = (ValueOne, ValueTwo, opt) => {
     if (ValueTwo === '0') {
       result = '0';
     } else {
-      result = Big(ValueOne).div(ValueTwo);
+      result = Big(ValueOne).div(Big(ValueTwo));
     }
   }
 
