@@ -20,7 +20,7 @@ const operate = (ValueOne, ValueTwo, opt) => {
 
   if (opt === '÷') {
     if (ValueTwo === '0') {
-      result = '0';
+      result = 'Zero division error';
     } else {
       result = Big(ValueOne).div(Big(ValueTwo));
     }
