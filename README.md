@@ -13,7 +13,7 @@
 
 ## Live Version
 
-Live version [here](https://react-calculator-so.herokuapp.com/).
+Live version [here](https://react-calculator-so.netlify.app/).
 
 ## Author
 
